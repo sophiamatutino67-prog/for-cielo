@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>For Cielo ❤️</title>
+
+<style>
+
+body{
+margin:0;
+font-family:sans-serif;
+background:linear-gradient(135deg,#ff758c,#ff7eb3);
+color:white;
+text-align:center;
+overflow-x:hidden;
+}
+
+.container{
+padding:40px 20px;
+max-width:800px;
+margin:auto;
+}
+
+h1{
+font-size:38px;
+}
+
+.gallery img{
+width:260px;
+border-radius:15px;
+margin:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.3);
+transition:.3s;
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+}
+
+button{
+padding:15px 25px;
+border:none;
+border-radius:10px;
+background:#ff3f6c;
+color:white;
+font-size:16px;
+margin-top:20px;
+}
+
+#surprise{
+display:none;
+font-size:20px;
+margin-top:20px;
+}
+
+.letter{
+background:rgba(255,255,255,0.15);
+padding:25px;
+border-radius:15px;
+margin-top:20px;
+}
+
+.heart{
+position:fixed;
+color:white;
+font-size:20px;
+animation:fall 5s linear infinite;
+}
+
+@keyframes fall{
+0%{transform:translateY(-10vh)}
+100%{transform:translateY(110vh)}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Happy Monthsary Cielo ❤️</h1>
+
+<p>Together for 1 Year and 1 Month</p>
+<p>Philippines → North Carolina 🌎</p>
+
+<div class="letter" id="letter"></div>
+
+<h2>Our Memories 📸</h2>
+
+<div class="gallery">
+<img src="photo1.jpg">
+<img src="photo2.jpg">
+</div>
+
+<button onclick="reveal()">Tap for Surprise ❤️</button>
+
+<div id="surprise">
+You are my favorite notification, my favorite person, and my favorite place. Mahal kita ❤️
+</div>
+
+<h2>Our Song 🎵</h2>
+
+<iframe style="border-radius:12px"
+src="https://open.spotify.com/embed/track/7vWHppvllFJXdXf0xplZum"
+width="300"
+height="80"
+frameBorder="0"
+allowfullscreen=""
+allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+</iframe>
+
+</div>
+
+<script>
+
+function reveal(){
+document.getElementById("surprise").style.display="block";
+}
+
+const text = `Happy monthsary, baby! ❤️ I'll make this short but very meaningful.
+
+All I wanna say is thank you for everything you've done for me.
+You're the only person who managed to give that kind of love to me.
+
+I may not always say this but I'm lucky to have you, Cielo.
+Please alagaan ang sarili palagi :)
+
+Mahal kita!
+
+Ingat sa daan, ingat kahit saan,
+at huwag mo 'ko ipagpapalit hehe.
+
+I love you!`;
+
+let i=0;
+
+function type(){
+if(i<text.length){
+document.getElementById("letter").innerHTML+=text.charAt(i);
+i++;
+setTimeout(type,35);
+}
+}
+
+type();
+
+setInterval(()=>{
+const heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="❤️";
+heart.style.left=Math.random()*100+"vw";
+document.body.appendChild(heart);
+
+setTimeout(()=>heart.remove(),5000);
+},400);
+
+</script>
+
+</body>
+</html>
